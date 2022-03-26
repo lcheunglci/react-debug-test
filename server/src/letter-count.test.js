@@ -14,4 +14,15 @@ describe('getLetterCount - basic functionality', () => {
     const actual = getLetterCount('cat');
     expect(actual).to.deep.equal(expected);
   });
+
+  it('return the correct letter count for words with more than one of certain letters', () => {
+    const expected = {
+      b: 1,
+      e: 2,
+      t: 2,
+      r: 1,
+    };
+    const actual = getLetterCount('better');
+    expect(actual).to.deep.equal(expected);
+  });
 });
