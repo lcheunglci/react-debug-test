@@ -16,3 +16,5 @@ export const getLetterCount = (string) => {
 
   return letterCount;
 };
+
+export default getLetterCount;

@@ -11,3 +11,7 @@
 // STATE - taste -> true
 
 // HINT: use getLetterCount function
+
+export const isAnagram = (left, right) => left === right;
+
+export default isAnagram;
