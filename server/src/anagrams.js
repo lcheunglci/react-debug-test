@@ -19,10 +19,9 @@ export const isAnagram = (left, right) => {
 
   const leftCount = getLetterCount(left.toLowerCase().replace(/\s+/g, ''));
   const rightCount = getLetterCount(right.toLowerCase().replace(/\s+/g, ''));
-  return (
-    Object.entries(leftCount).sort().toString() ===
-    Object.entries(rightCount).sort().toString()
-  );
+  const leftValues = Object.entries(leftCount).sort().toString();
+  const rightValues = Object.entries(rightCount).sort().toString();
+  return leftValues === rightValues;
 };
 
 export default isAnagram;
