@@ -1,3 +1,5 @@
+import { getLetterCount } from './letter-count';
+
 // elbow - below -> true
 // elbows - below -> false
 
@@ -12,6 +14,15 @@
 
 // HINT: use getLetterCount function
 
-export const isAnagram = (left, right) => left === right;
+export const isAnagram = (left, right) => {
+  if (left === right) return true;
+
+  const leftCount = getLetterCount(left.toLowerCase().replace(/\s+/g, ''));
+  const rightCount = getLetterCount(right.toLowerCase().replace(/\s+/g, ''));
+  return (
+    Object.entries(leftCount).sort().toString() ===
+    Object.entries(rightCount).sort().toString()
+  );
+};
 
 export default isAnagram;
