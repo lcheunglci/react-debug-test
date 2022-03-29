@@ -10,7 +10,7 @@ describe('getUserByUsername', () => {
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-      }
+      },
     );
 
     const db = client.db('TEST_DB');
