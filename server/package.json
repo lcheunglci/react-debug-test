@@ -5,7 +5,9 @@
   "main": "letter-count.js",
   "scripts": {
     "test": "set NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
-    "test_unix": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js"
+    "test:watch": "set NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch",
+    "test_unix": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
+    "test_unix:watch": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch"
   },
   "author": "",
   "license": "ISC",
