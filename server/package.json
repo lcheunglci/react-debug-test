@@ -5,9 +5,11 @@
   "main": "letter-count.js",
   "scripts": {
     "test": "set NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
+    "coverage": "set NODE_ENV=test && nyc --reporter=lcov --reporter=text npm run test",
     "test:watch": "set NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch",
     "test_unix": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js",
-    "test_unix:watch": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch"
+    "test_unix:watch": "NODE_ENV=test && npx mocha \"src/**/*.test.js\" --recursive --require @babel/register --file src/mocha-setup.js --watch",
+    "coverage_unix": "NODE_ENV=test && nyc --reporter=lcov --reporter=text npm run test_unix"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "chai": "^4.3.6",
     "chai-exclude": "^2.1.0",
     "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
     "regenerator-runtime": "^0.13.9",
     "sinon": "^13.0.1",
     "supertest": "^6.2.2"
