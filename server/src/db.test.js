@@ -1,10 +1,14 @@
-import { describe, it } from 'mocha';
+import { afterEach, describe, it } from 'mocha';
 import { expect } from 'chai';
 import { getUserByUsername } from './db';
 import { getDatabaseData, resetDatabase, setDatabaseData } from './test-helper';
 
 describe('getUserByUsername', () => {
   it('get the correct user from the database given a username', async () => {
+    afterEach('reset the database', async () => {
+      await resetDatabase();
+    });
+
     const fakeData = [
       {
         id: '123',
@@ -22,7 +26,6 @@ describe('getUserByUsername', () => {
 
     const actual = await getUserByUsername('abc');
     const finalDBState = await getDatabaseData('users');
-    await resetDatabase();
 
     const expected = {
       id: '123',
