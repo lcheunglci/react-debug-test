@@ -3,17 +3,19 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { getUserByUsername } from './db';
 
+const DB_NAME = process.env.NODE_ENV === 'test' ? 'TEST_DB' : 'PROD_DB';
+
 describe('getUserByUsername', () => {
   it('get the correct user from the database given a username', async () => {
     const client = await MongoClient.connect(
-      'mongodb://localhost:27017/TEST_DB',
+      `mongodb://localhost:27017/${DB_NAME}`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       },
     );
 
-    const db = client.db('TEST_DB');
+    const db = client.db(DB_NAME);
     // tests
 
     const fakeData = [

@@ -11,7 +11,7 @@ export const getUserByUsername = async (username) => {
     },
   );
 
-  const db = client.db('TEST_DB');
+  const db = client.db(DB_NAME);
 
   const result = await db.collection('users').findOne({ username });
 
